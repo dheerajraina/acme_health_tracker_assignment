@@ -1,5 +1,10 @@
-import 'package:acme_health_tracker_assignment/homepage/home_page.dart';
+import 'dart:developer';
+
+
+
+import 'package:acme_health_tracker_assignment/basewidget/base_widget.dart';
 import 'package:flutter/material.dart';
+
 
 void main() {
   runApp(const ACMEHealth());
@@ -17,8 +22,12 @@ class ACMEHealth extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
        ),
-      home: const HomePage(title: 'ACME Health'),
+      home: const BaseWidget(title: 'ACME Health'),
+      
     );
   }
 }
+
+
+
 
