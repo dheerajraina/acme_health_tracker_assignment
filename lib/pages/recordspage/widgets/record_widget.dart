@@ -4,9 +4,7 @@ import 'package:acme_health_tracker_assignment/network/firebase_operations.dart'
 import 'package:acme_health_tracker_assignment/pages/recordspage/records_page_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -27,8 +25,6 @@ class RecordWidget extends StatefulWidget {
 }
 
 class _RecordWidgetState extends State<RecordWidget> {
-
-  
   @override
   Widget build(BuildContext context) {
     var screenHeight = MediaQuery.of(context).size.height;
@@ -64,8 +60,8 @@ class _RecordWidgetState extends State<RecordWidget> {
                             Container(
                                 margin: EdgeInsets.only(left: 10, right: 10),
                                 child: TextField(
-                                  controller: TextEditingController(text: widget.value),
-                                  
+                                  controller:
+                                      TextEditingController(text: widget.value),
                                   onChanged: (val) {
                                     value = val;
                                   },
@@ -78,19 +74,27 @@ class _RecordWidgetState extends State<RecordWidget> {
                                 color: Colors.grey.shade300,
                                 child: Text("Update"),
                                 onPressed: () {
-
-                                  Get.find<RecordsPageController>().records[widget.trackerIndex][widget.index].value=value;
-                                  Get.find<RecordsPageController>().records[widget.trackerIndex][widget.index].createdOn=DateTime.now();
+                                  Get.find<RecordsPageController>()
+                                      .records[widget.trackerIndex]
+                                          [widget.index]
+                                      .value = value;
+                                  Get.find<RecordsPageController>()
+                                      .records[widget.trackerIndex]
+                                          [widget.index]
+                                      .createdOn = DateTime.now();
                                   log("${Get.find<RecordsPageController>().records[widget.trackerIndex][widget.index].createdOn}");
-                                  var id =Get.find<RecordsPageController>().records[widget.trackerIndex][widget.index].id;
+                                  var id = Get.find<RecordsPageController>()
+                                      .records[widget.trackerIndex]
+                                          [widget.index]
+                                      .id;
 
-                                  var data={
-                                    'value':value,
-                                    'createdOn':DateTime.now(),
+                                  var data = {
+                                    'value': value,
+                                    'createdOn': DateTime.now(),
                                   };
-                                  FirebaseOperations().update(id , data);
-                                 
-                                   Navigator.pop(context);   
+                                  FirebaseOperations().update(id, data);
+
+                                  Navigator.pop(context);
                                 }),
                             SizedBox(
                               height: 5,

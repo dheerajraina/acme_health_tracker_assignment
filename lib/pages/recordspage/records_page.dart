@@ -1,12 +1,11 @@
 import 'dart:async';
 import 'dart:developer';
 
-import 'package:acme_health_tracker_assignment/models/health_data_model.dart';
 import 'package:acme_health_tracker_assignment/network/firebase_operations.dart';
 import 'package:acme_health_tracker_assignment/pages/homepage/controllers/tracker_widget_controller.dart';
 import 'package:acme_health_tracker_assignment/pages/recordspage/records_page_controller.dart';
 import 'package:acme_health_tracker_assignment/pages/recordspage/widgets/record_widget.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
