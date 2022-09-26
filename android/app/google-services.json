@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "430001219348",
+    "project_id": "acmehealthtrackerassignment",
+    "storage_bucket": "acmehealthtrackerassignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:430001219348:android:6dd0fa96243f315e74c401",
+        "android_client_info": {
+          "package_name": "com.example.acme_health_tracker_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "430001219348-4oekaolptcql7vv8foup5gr5ijthc55q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtuZWCULDgG9jbiDS-JS8S6_zXpneY-OM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "430001219348-4oekaolptcql7vv8foup5gr5ijthc55q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
