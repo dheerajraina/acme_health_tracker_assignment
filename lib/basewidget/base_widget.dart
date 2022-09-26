@@ -1,17 +1,23 @@
 import 'dart:developer';
 
-import 'package:acme_health_tracker_assignment/aboutpage/about_page.dart';
+import 'package:acme_health_tracker_assignment/pages/aboutpage/about_page.dart';
 import 'package:acme_health_tracker_assignment/basewidget/base_widget_controller.dart';
-import 'package:acme_health_tracker_assignment/homepage/home_page.dart';
+import 'package:acme_health_tracker_assignment/pages/homepage/home_page.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BaseWidget extends StatefulWidget {
-  const BaseWidget({Key? key, required this.title}) : super(key: key);
+   BaseWidget({Key? key, required this.title,required this.analytics,required this.observer}) ;
 
   final String title;
+   final FirebaseAnalytics analytics;
+   final FirebaseAnalyticsObserver observer;
+
+
 
   @override
   State<BaseWidget> createState() => _BaseWidgetState();
@@ -19,6 +25,9 @@ class BaseWidget extends StatefulWidget {
 
 class _BaseWidgetState extends State<BaseWidget> {
   BaseWidgetController _baseWidgetController = Get.put(BaseWidgetController());
+
+
+  
 
   @override
   void dispose() {
@@ -31,6 +40,10 @@ class _BaseWidgetState extends State<BaseWidget> {
 
   @override
   Widget build(BuildContext context) {
+
+    widget.analytics.setCurrentScreen(screenName: "Home Page");
+
+    
     var screenHeight = MediaQuery.of(context).size.height;
     var screenWidth = MediaQuery.of(context).size.width;
     return SafeArea(
@@ -75,6 +88,8 @@ class _BaseWidgetState extends State<BaseWidget> {
         ],
         onTap: ((value) {
           log("${value}");
+
+          widget.analytics.logEvent(name: "Bottom Nav Clicked $value");
 
           _baseWidgetController.currentIndex.value=value;
 
