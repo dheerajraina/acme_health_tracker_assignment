@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
         itemBuilder: (context,index){
           log("index");
 
-          return TrackerWidgetBuilder(title: _trackerWidgetController.trackers[index], index: index,intialValue:index==0? _trackerWidgetController.latestWeight.value:index==1? _trackerWidgetController.latestBP.value:_trackerWidgetController.latestExercise.value ,);
+          return TrackerWidgetBuilder(title: _trackerWidgetController.trackers[index], index: index);
         });
       }),
     ));

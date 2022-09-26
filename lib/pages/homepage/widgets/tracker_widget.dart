@@ -2,8 +2,8 @@ import 'dart:developer';
 
 import 'package:acme_health_tracker_assignment/network/firebase_operations.dart';
 import 'package:acme_health_tracker_assignment/pages/homepage/controllers/tracker_widget_controller.dart';
-import 'package:acme_health_tracker_assignment/pages/homepage/home_page.dart';
-import 'package:acme_health_tracker_assignment/pages/recordspage/records_page_controller.dart';
+// import 'package:acme_health_tracker_assignment/pages/homepage/home_page.dart';
+// import 'package:acme_health_tracker_assignment/pages/recordspage/records_page_controller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,11 +14,11 @@ class TrackerWidgetBuilder extends StatefulWidget {
       {Key? key,
       required this.title,
       required this.index,
-      this.intialValue = "0"});
+     });
 
   String title;
   int index;
-  String intialValue;
+  
 
   @override
   State<TrackerWidgetBuilder> createState() => _TrackerWidgetBuilderState();
@@ -88,7 +88,7 @@ class _TrackerWidgetBuilderState extends State<TrackerWidgetBuilder> {
                                   "value":value,
                                   "createdOn":DateTime.now(),
                                 };
-                                widget.index==0?_trackerWidgetController.latestWeight.value=value:_trackerWidgetController.latestBP.value=value;
+                                // widget.index==0?_trackerWidgetController.latestWeight.value=value:_trackerWidgetController.latestBP.value=value;
                                var response= _firebaseOperations.storeData(data);
                                log("Response = $response");
                                

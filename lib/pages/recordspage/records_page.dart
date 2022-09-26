@@ -98,13 +98,13 @@ class _RecordsPageState extends State<RecordsPage> {
                                   "value": value,
                                   "createdOn": DateTime.now(),
                                 };
-                                widget.indexClicked == 0
-                                    ? Get.find<TrackerWidgetController>()
-                                        .latestWeight
-                                        .value = value
-                                    : Get.find<TrackerWidgetController>()
-                                        .latestBP
-                                        .value = value;
+                                // widget.indexClicked == 0
+                                //     ? Get.find<TrackerWidgetController>()
+                                //         .latestWeight
+                                //         .value = value
+                                //     : Get.find<TrackerWidgetController>()
+                                //         .latestBP
+                                //         .value = value;
                                 var response =
                                     FirebaseOperations().storeData(data);
                                 log("Response = $response");
